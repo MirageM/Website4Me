@@ -27,7 +27,7 @@ const Testimonials: FC = memo(() => {
   }, [imageSrc]);
 
   // Mobile iOS doesn't allow background-fixed elements
-  useEffect(() => {
+  useEffect(() => { 
     setParallaxEnabled(!(isMobile && isApple));
   }, []);
 
@@ -70,7 +70,7 @@ const Testimonials: FC = memo(() => {
   }
 
   return (
-    <Section noPadding sectionId={SectionId.Testimonials}>
+    <Section noPadding sectionId={SectionId.Projects}>
       <div
         className={classNames(
           'flex w-full items-center justify-center bg-cover bg-center px-4 py-16 md:py-24 lg:px-8',

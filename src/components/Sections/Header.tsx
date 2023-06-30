@@ -12,7 +12,7 @@ export const headerID = 'headerNav';
 const Header: FC = memo(() => {
   const [currentSection, setCurrentSection] = useState<SectionId | null>(null);
   const navSections = useMemo(
-    () => [SectionId.About, SectionId.Resume, SectionId.Portfolio, SectionId.Testimonials, SectionId.Contact],
+    () => [SectionId.Hero, SectionId.About, SectionId.Resume, SectionId.Education, SectionId.Experience, SectionId.InformationM, SectionId.Projects, SectionId.Skills, SectionId.Contact],
     [],
   );
 
@@ -123,13 +123,20 @@ const NavItem: FC<{
   activeClass: string;
   inactiveClass: string;
   onClick?: () => void;
-}> = memo(({section, current, inactiveClass, activeClass, onClick}) => {
+}> = memo(({section, current, inactiveClass, activeClass}) => {
+  const handleClick = useCallback(() => {
+    const targetElement = document.getElementById(section);
+    if (targetElement) {
+      targetElement.scrollIntoView({behavior: 'smooth'});
+    }
+  }, [section]);
   return (
     <Link
       className={classNames(current ? activeClass : inactiveClass)}
-      href={`/#${section}`}
+      // href={`/#${section}`}
+      href = '#skills'
       key={section}
-      onClick={onClick}>
+      onClick={handleClick}>
       {section}
     </Link>
   );

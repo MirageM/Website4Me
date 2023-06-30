@@ -93,6 +93,11 @@ export interface TimelineItem {
   content: JSX.Element;
 }
 
+export interface TimelineSkill {
+  title: string;
+  content: JSX.Element;
+}
+
 /**
  * Testimonial section
  */
