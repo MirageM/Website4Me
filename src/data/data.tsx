@@ -52,7 +52,7 @@ export const SectionId = {
   Hero: 'hero',
   About: 'about',
   Contact: 'contact',
-  InformationM: 'informationm',
+  InformationM: 'information',
   Resume: 'education',
   Education: 'education',
   Experience: 'experience',
@@ -349,7 +349,7 @@ export const experience: TimelineItem[] = [
   },
 ];
 
-export const informationM: TimelineSkill[] = [
+export const information: TimelineSkill[] = [
   {
     title: 'Languages',
     content: (

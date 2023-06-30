@@ -1,10 +1,11 @@
 import {FC, memo} from 'react';
 
-import {education, informationM, experience, SectionId, skills} from '../../../data/data';
+import {education, experience, information, SectionId, skills} from '../../../data/data';
 import Section from '../../Layout/Section';
 import ResumeSection from './ResumeSection';
 import {SkillGroup} from './Skills';
 import TimelineItem from './TimelineItem';
+import TimelineSkill from './TimelineSkill';
 
 const Resume: FC = memo(() => {
   return (
@@ -15,27 +16,23 @@ const Resume: FC = memo(() => {
             <TimelineItem item={item} key={`${item.title}-${index}`} />
           ))}
         </ResumeSection>
-        <ResumeSection title="InformationM">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            {informationM.map((item, index) => (
-              <div key={`${item.title}-${index}`}>
-                <dt className="text-lg font-medium text-neutral-900">{item.title}</dt>
-              </div>
-            ))}
-          </div>
-        </ResumeSection>
         <ResumeSection title="Work">
           {experience.map((item, index) => (
             <TimelineItem item={item} key={`${item.title}-${index}`} />
           ))}
         </ResumeSection>
         <ResumeSection title="Skills">
-          <p className="pb-8">Here you can show a snapshot of your skills to show off to employers</p>
+          <p className="pb-8">Mirage's Skill Set: </p>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {skills.map((skillgroup, index) => (
               <SkillGroup key={`${skillgroup.name}-${index}`} skillGroup={skillgroup} />
             ))}
           </div>
+        </ResumeSection>
+        <ResumeSection title="Information">
+          {information.map((item) => (
+            <TimelineSkill item={item} key={`${item.title}`} />
+          ))}
         </ResumeSection>
       </div>
     </Section>
