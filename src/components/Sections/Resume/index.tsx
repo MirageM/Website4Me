@@ -16,11 +16,14 @@ const Resume: FC = memo(() => {
             <TimelineItem item={item} key={`${item.title}-${index}`} />
           ))}
         </ResumeSection>
+    <Section className="bg-neutral-100" sectionId={SectionId.Experience}>
         <ResumeSection title="Work">
           {experience.map((item, index) => (
             <TimelineItem item={item} key={`${item.title}-${index}`} />
           ))}
         </ResumeSection>
+        </Section>
+    <Section className="bg-neutral-100" sectionId={SectionId.Skills}>
         <ResumeSection title="Skills">
           <p className="pb-8">Mirage's Skill Set: </p>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -29,11 +32,14 @@ const Resume: FC = memo(() => {
             ))}
           </div>
         </ResumeSection>
+        </Section>
+      <Section className="bg-neutral-100" sectionId={SectionId.InformationM}>
         <ResumeSection title="Information">
           {information.map((item) => (
             <TimelineSkill item={item} key={`${item.title}`} />
           ))}
         </ResumeSection>
+        </Section>
       </div>
     </Section>
   );
